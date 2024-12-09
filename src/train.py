@@ -14,7 +14,7 @@ import pandas as pd
 
 
 def init_model(model_name: str):
-    model_dir = Path(__file__).parent / "model"
+    model_dir = Path(__file__).parent.parent / "models"
     model_dir.mkdir(exist_ok=True, parents=True)
     model_path = snapshot_download(model_name, cache_dir = model_dir,)
     tokenizer = AutoTokenizer.from_pretrained(model_path,use_fast=False,trust_remote_code=True)
